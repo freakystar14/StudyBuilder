@@ -13,6 +13,43 @@ padding:0;
 box-sizing:border-box;
 }
 
+.menu-button{
+position:fixed;
+top:20px;
+left:20px;
+font-size:28px;
+cursor:pointer;
+z-index:1000;
+}
+
+.sidebar{
+position:fixed;
+top:0;
+left:-250px;
+width:220px;
+height:100%;
+background:white;
+padding-top:80px;
+box-shadow:2px 0 10px rgba(0,0,0,0.1);
+transition:0.3s;
+z-index:999;
+}
+
+.sidebar a{
+display:block;
+padding:15px 25px;
+text-decoration:none;
+color:#222;
+font-weight:500;
+}
+
+.sidebar a:hover{
+background:#f2f2f2;
+}
+
+.sidebar.active{
+left:0;
+}
 body{
 font-family:-apple-system,BlinkMacSystemFont,sans-serif;
 background:#f7f7f5;
