@@ -220,6 +220,8 @@ timerInterval = setInterval(() => {
 
 seconds++;
 
+localStorage.setItem("focusTime", seconds);
+
 updateTimer();
 
 },1000);
