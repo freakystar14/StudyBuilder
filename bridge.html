@@ -196,7 +196,7 @@ document.getElementById("sidebar").classList.toggle("active");
 </script>
 <script>
 
-let seconds = 0;
+let seconds = Number(localStorage.getItem("focusTime")) || 0;
 let timerInterval = null;
 
 function updateTimer(){
