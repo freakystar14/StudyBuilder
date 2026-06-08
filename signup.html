@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up - StudyBuilder</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f7f7f5;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:15px;
+width:320px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#222;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Create Account</h2>
+
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="signup()">Sign Up</button>
+
+<p id="message"></p>
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyD0vGPiV7qjMeq1EHuoVJQFQb21H7mc3_o",
+authDomain: "studybuilder-bccbc.firebaseapp.com",
+projectId: "studybuilder-bccbc",
+storageBucket: "studybuilder-bccbc.firebasestorage.app",
+messagingSenderId: "34924649259",
+appId: "1:34924649259:web:9db1f2ec2471b3e0b0836e",
+measurementId: "G-K49JMWDH6Y"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.signup = function(){
+
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+
+createUserWithEmailAndPassword(auth,email,password)
+.then(() => {
+document.getElementById("message").innerText =
+"Account created successfully!";
+})
+.catch((error) => {
+document.getElementById("message").innerText =
+error.message;
+});
+
+};
+
+</script>
+
+</body>
+</html>
