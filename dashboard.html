@@ -112,5 +112,32 @@ Logout
 
 </div>
 
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyD0vGPiV7qjMeq1EHuoVJQFQb21H7mc3_o",
+authDomain: "studybuilder-bccbc.firebaseapp.com",
+projectId: "studybuilder-bccbc",
+storageBucket: "studybuilder-bccbc.firebasestorage.app",
+messagingSenderId: "34924649259",
+appId: "1:34924649259:web:9db1f2ec2471b3e0b0836e",
+measurementId: "G-K49JMWDH6Y"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+
+if(user){
+document.getElementById("userEmail").innerText = user.email;
+}
+
+});
+
+</script>
 </body>
 </html>
