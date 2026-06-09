@@ -281,7 +281,12 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const completeBtn = document.getElementById("completeBtn");
 
-completeBtn.addEventListener("click", async () => {
+completeBtn.addEventListener("click", async () => {const user = auth.currentUser;
+
+if(!user){
+alert("Please login first.");
+return;
+}
 
 });
 
