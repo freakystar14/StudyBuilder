@@ -137,6 +137,14 @@ document.getElementById("userEmail").innerText = user.email;
 }
 
 });
+document.getElementById("logoutBtn").addEventListener("click", () => {
+
+signOut(auth)
+.then(() => {
+window.location.href = "login.html";
+});
+
+});
 
 </script>
 </body>
