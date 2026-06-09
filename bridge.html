@@ -255,5 +255,31 @@ updateTimer();
 updateTimer();
 
 </script>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+import {
+getFirestore,
+doc,
+getDoc,
+setDoc
+} from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyD0vGPiV7qjMeq1EHuoVJQFQb21H7mc3_o",
+authDomain: "studybuilder-bccbc.firebaseapp.com",
+projectId: "studybuilder-bccbc",
+storageBucket: "studybuilder-bccbc.firebasestorage.app",
+messagingSenderId: "34924649259",
+appId: "1:34924649259:web:9db1f2ec2471b3e0b0836e",
+measurementId: "G-K49JMWDH6Y"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+</script>
 </body>
 </html>
